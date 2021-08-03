@@ -207,14 +207,3 @@ a.link,
     opacity: 0;
   }
 }
-
-.center-loader {
-  width: 10%;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 560px) {
-  .center-loader {
-    width: 20%;
-  }
-}
