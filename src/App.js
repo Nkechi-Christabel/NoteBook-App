@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import NewNote from "./Components/NewNote";
+import NavBar from "./Components/NavBar";
+import MyNotes from "./Components/MyNotes";
+import NoteDetails from "./Components/NoteDetails";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useState } from "react";
+import NotFound from "./Components/NotFound";
 
 function App() {
+  const [search, setsearch] = useState("");
+
+  const handleChange = (e) => {
+    setsearch(e.target.value.toLowerCase());
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <NavBar search={search} handleChange={handleChange} />
+        <div className="content">
+          <Switch>
+            <Route path="/" exact>
+              <MyNotes search={search} />
+            </Route>
+            <Route path="/NewNote">
+              <NewNote />
+            </Route>
+            <Route path="/notes/:id">
+              <NoteDetails />
+            </Route>
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+        </div>
+      </div>
+    </Router>
   );
 }
 
