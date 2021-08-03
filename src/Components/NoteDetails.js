@@ -37,7 +37,7 @@ const NoteDetails = () => {
                 <p>{note.noteBody}</p>
                 <div className="mt-5">
                   <button
-                    className="btn mt-5 border-0 rounded-0 mr-5 mr-md-0"
+                    className="btn my-5 border-0 rounded-0 mr-5 mr-md-0"
                     onClick={handleDelete}
                   >
                     Delete note
