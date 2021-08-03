@@ -8,29 +8,29 @@ const useFetch = (url) => {
   useEffect(() => {
     const abortCont = new AbortController();
 
-    setTimeout(() => {
-      fetch(url, { signal: abortCont.signal })
-        .then((res) => {
-          console.log(res);
-          if (!res.ok) {
-            throw Error("Unable to fetch Notes");
-          }
-          return res.json();
-        })
-        .then((data) => {
-          setdata(data);
-          seterror(null);
+    // setTimeout(() => {
+    fetch(url, { signal: abortCont.signal })
+      .then((res) => {
+        console.log(res);
+        if (!res.ok) {
+          throw Error("Unable to fetch Notes");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setdata(data);
+        seterror(null);
+        setisLoading(false);
+      })
+      .catch((err) => {
+        if (err.name === "AbortError") {
+          console.log("Fetch Aborted");
+        } else {
           setisLoading(false);
-        })
-        .catch((err) => {
-          if (err.name === "AbortError") {
-            console.log("Fetch Aborted");
-          } else {
-            setisLoading(false);
-            seterror(err.message);
-          }
-        });
-    }, 500);
+          seterror(err.message);
+        }
+      });
+    // }, 500);
 
     return () => abortCont.abort();
   }, [url]);
