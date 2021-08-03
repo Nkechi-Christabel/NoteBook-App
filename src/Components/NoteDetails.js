@@ -30,14 +30,14 @@ const NoteDetails = () => {
       {isLoading && <Loader />}
       {note && (
         <div className="container">
-          <div className="row">
+          <div className="row my-5">
             <div className="col-12">
-              <div className="note__details-content rounded p-5">
+              <div className="note__details-content rounded p-5 my-5">
                 <h4 className="pb-2 font-weight-bold">{note.title}</h4>
                 <p>{note.noteBody}</p>
                 <div className="mt-5">
                   <button
-                    className="btn my-5 border-0 rounded-0 mr-5 mr-md-0"
+                    className="btn mt-5 border-0 rounded-0 mr-5 mr-md-0"
                     onClick={handleDelete}
                   >
                     Delete note

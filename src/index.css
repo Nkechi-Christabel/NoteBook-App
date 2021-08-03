@@ -121,11 +121,11 @@ a.link,
   white-space: nowrap;
 }
 
-.note-list,
+/* .note-list,
 .note-details,
 .my-notes {
-  margin-top: 10rem;
-}
+  margin: 10rem 10rem;
+} */
 
 /* Loader */
 
