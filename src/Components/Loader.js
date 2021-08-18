@@ -1,8 +1,8 @@
 const Loader = () => {
   return (
     <div className="container">
-      <div className="row justify-content-center mt-5 pt-5">
-        <div className="lds-spinner mt-5 pt-5">
+      <div className="row justify-content-center loader-center">
+        <div className="lds-spinner">
           <div></div>
           <div></div>
           <div></div>

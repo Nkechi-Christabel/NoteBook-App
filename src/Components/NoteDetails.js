@@ -1,8 +1,11 @@
 import useFetch from "./useFetch";
-import { useHistory, Link, useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import Loader from "./Loader";
+import EditNote from "./EditNote";
+import { useState } from "react";
 
 const NoteDetails = () => {
+  const [clicked, setclicked] = useState(false);
   const { id } = useParams();
 
   const {
@@ -20,13 +23,17 @@ const NoteDetails = () => {
     });
   };
 
-  // const updateNote = (id) => {
-  //   noteHistory.push("/EditNote/" + note.id);
-  // };
+  const handleClick = () => {
+    setclicked(true);
+  };
+
+  if (clicked) {
+    return <EditNote id={id} notes={note} />;
+  }
 
   return (
     <div className="note-details">
-      {error && <div className="text-center">{error}</div>}
+      {error && <div className="text-center mt-5 pt-5">{error}</div>}
       {isLoading && <Loader />}
       {note && (
         <div className="container">
@@ -42,14 +49,12 @@ const NoteDetails = () => {
                   >
                     Delete note
                   </button>
-                  <Link to={`/notes/${note.id}`}>
-                    <button
-                      // onClick={updateNote}
-                      className="btn mt-5 mx-md-5 rounded-0"
-                    >
-                      Edit note
-                    </button>
-                  </Link>
+                  <button
+                    onClick={handleClick}
+                    className="btn mt-5 mx-md-5 rounded-0"
+                  >
+                    Edit note
+                  </button>
                 </div>
               </div>
             </div>

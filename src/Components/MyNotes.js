@@ -11,7 +11,7 @@ const MyNotes = ({ search }) => {
 
   return (
     <div className="my-notes">
-      {error && <div className="text-center">{error}</div>}
+      {error && <div className="text-center mt-5 pt-5">{error}</div>}
       {isLoading && <Loader />}
       {notes && <MyNoteList notes={notes} search={search} />}
     </div>

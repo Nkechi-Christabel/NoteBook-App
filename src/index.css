@@ -121,10 +121,8 @@ a.link,
   white-space: nowrap;
 }
 
-/* .note-list,
-.note-details,
-.my-notes {
-  margin: 10rem 10rem;
+/* .note-list {
+  margin-top: 10rem;
 } */
 
 /* Loader */
@@ -206,4 +204,8 @@ a.link,
   100% {
     opacity: 0;
   }
+}
+
+.loader-center {
+  margin-top: 20rem;
 }

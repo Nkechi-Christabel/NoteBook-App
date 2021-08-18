@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const MyNoteList = ({ notes, search }) => {
   const sorted = notes.sort((a, b) => b.timed - a.timed);
+  console.log(notes);
 
   console.log(sorted);
   return (
@@ -10,14 +11,13 @@ const MyNoteList = ({ notes, search }) => {
         <div className="row my-5 mx-2">
           {notes.length === 0 ? (
             <h5 className="text-center w-50 mx-auto mt-5">
-              You do not have any saved note.{" "}
+              You do not have any saved note.
               <Link className="link" to="/NewNote">
                 Create one
               </Link>
             </h5>
           ) : (
             notes
-
               .filter((filtered) =>
                 filtered.title.toLowerCase().includes(search)
               )

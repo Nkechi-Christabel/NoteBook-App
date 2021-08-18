@@ -6,6 +6,7 @@ import NoteDetails from "./Components/NoteDetails";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import NotFound from "./Components/NotFound";
+// import EditNote from "./Components/EditNote";
 
 function App() {
   const [search, setsearch] = useState("");
@@ -29,6 +30,9 @@ function App() {
             <Route path="/notes/:id">
               <NoteDetails />
             </Route>
+            {/* <Route path="/EditNote">
+              <EditNote />
+            </Route> */}
             <Route path="*">
               <NotFound />
             </Route>
