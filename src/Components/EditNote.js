@@ -60,7 +60,7 @@ const EditNote = ({ id, notes }) => {
             required
           ></textarea>
         </div>
-        <button className="btn mt-5 px-3 py-2">Save note</button>
+        <button className="save__note-btn btn mt-5 px-3 py-2">Save note</button>
       </form>
     </div>
   );
