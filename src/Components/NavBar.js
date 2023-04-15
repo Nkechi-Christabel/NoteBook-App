@@ -4,7 +4,7 @@ const NavBar = ({ search, handleChange }) => {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <h1 className="navbar-brand pb-0 pr-5 ml-lg-5">Note Book</h1>
+        <h1 className="navbar-brand pb-0 pr-5 ml-lg-5">NoteBook</h1>
         <button
           className="navbar-toggler"
           type="button"

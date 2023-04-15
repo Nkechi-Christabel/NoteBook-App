@@ -81,7 +81,6 @@ a.link:hover {
 
 .note__details-content {
   width: 75%;
-  margin: 0 auto;
 }
 
 @media screen and (max-width: 787px) {
@@ -118,6 +117,10 @@ a.link,
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+.error {
+  height: 90vh;
 }
 
 /* Loader */

@@ -12,11 +12,11 @@ const NoteDetails = () => {
     data: note,
     isLoading,
     error,
-  } = useFetch("https://dummy-json-server.herokuapp.com/notes/" + id);
+  } = useFetch("https://doodlenote.onrender.com/notes/" + id);
   const noteHistory = useHistory();
 
   const handleDelete = () => {
-    fetch("https://dummy-json-server.herokuapp.com/notes/" + note.id, {
+    fetch("https://doodlenote.onrender.com/notes/" + note.id, {
       method: "DELETE",
     }).then(() => {
       noteHistory.push("/");
@@ -33,13 +33,17 @@ const NoteDetails = () => {
 
   return (
     <div className="note-details">
-      {error && <div className="text-center mt-5 pt-5">{error}</div>}
+      {error && (
+        <div className="error d-flex justify-content-center align-items-center">
+          {error}
+        </div>
+      )}
       {isLoading && <Loader />}
       {note && (
         <div className="container">
           <div className="row my-5">
             <div className="col-12">
-              <div className="note__details-content rounded p-5 my-5">
+              <div className="note__details-content mx-auto rounded p-5 my-5">
                 <h4 className="pb-2 font-weight-bold">{note.title}</h4>
                 <p>{note.noteBody}</p>
                 <div className="mt-5">

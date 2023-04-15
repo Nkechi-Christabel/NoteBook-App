@@ -28,7 +28,7 @@ const NewNote = () => {
 
     const notes = { title, noteBody, fullDate, timed };
 
-    fetch("https://dummy-json-server.herokuapp.com/notes", {
+    fetch("https://doodlenote.onrender.com/notes", {
       method: "Post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(notes),
