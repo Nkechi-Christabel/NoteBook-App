@@ -15,7 +15,7 @@ const MyNoteList = ({ notes, search }) => {
               </Link>
             </h5>
           ) : (
-            notes
+            sorted
               .filter((filtered) =>
                 filtered.title.toLowerCase().includes(search)
               )
